@@ -1,9 +1,23 @@
 {
   "name": "typescript-learning",
   "version": "1.0.0",
-  "description": "Learning typescript",
-  "main": "index.js",
-  "repository": "git@github.com:muneneevans/node-learning.git",
+  "description": "Learngin typescript",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muneneevans/Typescript-learning.git"
+  },
   "author": "Evans Munene",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muneneevans/Typescript-learning/issues"
+  },
+  "homepage": "https://github.com/muneneevans/Typescript-learning#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
 }
