@@ -1,28 +1,19 @@
-function add(n1: number, n2: number): number {
-    return n1 + n2
+//unknown
+let userInput: unknown
+let userName: string
+
+userInput = 4
+userInput = "evans"
+if (typeof userInput === 'string') {
+    userName = userInput
 }
 
-// only for demo, don't return undefined
-function printResultUndefined(num: number): undefined {
-    console.log("result: " + num)
-    return;
-}
-function printResult(num: number): void {
-    console.log("result: " + num)
-    return;
+
+//never
+function generateError(message: string, code: number): never {
+    throw { message: message, errorCode: code }
+    //white (true) {}
 }
 
-//callbacks with parameters
-function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
-    let result = n1 + n2
-    cb(result)
-}
-
-// pointers & function types
-let combineValue: (a: number, b: number) => number;
-combineValue = add;
-
-
-console.log(combineValue(5, 12))
-
-addAndHandle(1, 2, (r) => { console.log(r) })
+const result = generateError("an error occurred", 500)
+console.log(result)
