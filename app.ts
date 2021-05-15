@@ -1,20 +1,41 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string) {
+// const person: {
+//     name: string,
+//     age: number,
+//     hobbies: string[],
+//     role: [number, string]
+// } = {
+//     name: "Evans",
+//     age: 10,
+//     hobbies: ["Football", "Music"],
+//     role: [3, "author"]
+// };
 
-    const result = n1 + n2
-    if (showResult) {
-        console.log(phrase + result)
-    }
-    else {
-        return n1 + n2;
-    }
+
+//Enum with custom starting position
+enum Role {
+    ADMIN = 4, READ_ONLY, AUTHOR
 }
 
-const number1 = 5;
-const number2 = 2.8;
-const printResult = true
-let resultPhrase = "result is "
+const person = {
+    name: "Evans",
+    age: 10,
+    hobbies: ["Football", "Music"],
+    role: Role.ADMIN
+};
 
 
+// person.role.push("admin")
 
-add(number1, number2, printResult, resultPhrase);
+// any Array
+let favoriteActivities: any[]
+favoriteActivities = ["Sports"]
 
+console.log(person.role)
+
+for (const hobby of person.hobbies) {
+    console.log(hobby.toLocaleLowerCase())
+}
+
+if (person.role === Role.AUTHOR) {
+    console.log("is author")
+}
