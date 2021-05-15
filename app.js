@@ -1,36 +1,18 @@
-// const person: {
-//     name: string,
-//     age: number,
-//     hobbies: string[],
-//     role: [number, string]
-// } = {
-//     name: "Evans",
-//     age: 10,
-//     hobbies: ["Football", "Music"],
-//     role: [3, "author"]
-// };
-//Enum with custom starting position
-var Role;
-(function (Role) {
-    Role[Role["ADMIN"] = 4] = "ADMIN";
-    Role[Role["READ_ONLY"] = 5] = "READ_ONLY";
-    Role[Role["AUTHOR"] = 6] = "AUTHOR";
-})(Role || (Role = {}));
-var person = {
-    name: "Evans",
-    age: 10,
-    hobbies: ["Football", "Music"],
-    role: Role.ADMIN
-};
-// person.role.push("admin")
-// any Array
-var favoriteActivities;
-favoriteActivities = ["Sports"];
-console.log(person.role);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toLocaleLowerCase());
+function combine(input1, input2, resultConversion) {
+    var result;
+    if (typeof input1 === "number" && typeof input2 === 'number' || resultConversion === 'as-number') {
+        result = +input1 + +input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    // if (resultConversion === 'as-number') {
+    //     return +result
+    // } else {
+    //     return result.toString()
+    // }
+    return result;
 }
-if (person.role === Role.AUTHOR) {
-    console.log("is author");
-}
+console.log(combine(10, 20, "as-number"));
+console.log(combine("10", "20", "as-number"));
+console.log(combine("d", "b", "as-text"));

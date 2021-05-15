@@ -1,41 +1,22 @@
-// const person: {
-//     name: string,
-//     age: number,
-//     hobbies: string[],
-//     role: [number, string]
-// } = {
-//     name: "Evans",
-//     age: 10,
-//     hobbies: ["Football", "Music"],
-//     role: [3, "author"]
-// };
+type Combinable = number | string
+type ConversionDescriptor = 'as-number' | 'as-text'
 
-
-//Enum with custom starting position
-enum Role {
-    ADMIN = 4, READ_ONLY, AUTHOR
+function combine(input1: Combinable, input2: Combinable, resultConversion: ConversionDescriptor) {
+    let result;
+    if (typeof input1 === "number" && typeof input2 === 'number' || resultConversion === 'as-number') {
+        result = +input1 + +input2
+    } else {
+        result = input1.toString() + input2.toString()
+    }
+    // if (resultConversion === 'as-number') {
+    //     return +result
+    // } else {
+    //     return result.toString()
+    // }
+    return result
 }
 
-const person = {
-    name: "Evans",
-    age: 10,
-    hobbies: ["Football", "Music"],
-    role: Role.ADMIN
-};
 
-
-// person.role.push("admin")
-
-// any Array
-let favoriteActivities: any[]
-favoriteActivities = ["Sports"]
-
-console.log(person.role)
-
-for (const hobby of person.hobbies) {
-    console.log(hobby.toLocaleLowerCase())
-}
-
-if (person.role === Role.AUTHOR) {
-    console.log("is author")
-}
+console.log(combine(10, 20, "as-number"))
+console.log(combine("10", "20", "as-number"))
+console.log(combine("d", "b", "as-text"))
