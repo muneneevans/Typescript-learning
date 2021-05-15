@@ -1,18 +1,22 @@
-function combine(input1, input2, resultConversion) {
-    var result;
-    if (typeof input1 === "number" && typeof input2 === 'number' || resultConversion === 'as-number') {
-        result = +input1 + +input2;
-    }
-    else {
-        result = input1.toString() + input2.toString();
-    }
-    // if (resultConversion === 'as-number') {
-    //     return +result
-    // } else {
-    //     return result.toString()
-    // }
-    return result;
+function add(n1, n2) {
+    return n1 + n2;
 }
-console.log(combine(10, 20, "as-number"));
-console.log(combine("10", "20", "as-number"));
-console.log(combine("d", "b", "as-text"));
+// only for demo, don't return undefined
+function printResultUndefined(num) {
+    console.log("result: " + num);
+    return;
+}
+function printResult(num) {
+    console.log("result: " + num);
+    return;
+}
+//callbacks with parameters
+function addAndHandle(n1, n2, cb) {
+    var result = n1 + n2;
+    cb(result);
+}
+// pointers & function types
+var combineValue;
+combineValue = add;
+console.log(combineValue(5, 12));
+addAndHandle(1, 2, function (r) { console.log(r); });
