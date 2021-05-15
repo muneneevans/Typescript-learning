@@ -1,0 +1,9 @@
+{
+  "name": "typescript-learning",
+  "version": "1.0.0",
+  "description": "Learning typescript",
+  "main": "index.js",
+  "repository": "git@github.com:muneneevans/node-learning.git",
+  "author": "Evans Munene",
+  "license": "MIT"
+}
